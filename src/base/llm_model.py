@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI
 
-def get_openai_llm(model_name: str = "gpt-3.5-turbo",
+def get_openai_llm(model_name: str = "gpt-4o-mini",
                    max_tokens = 512,
                    temp = 0.3):
     llm = ChatOpenAI(api_key="",

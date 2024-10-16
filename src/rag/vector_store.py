@@ -9,7 +9,7 @@ class VectorDB:
     def __init__(self,
                  documents = None,
                  vector_db: Union[Chroma, FAISS] = Chroma, 
-                 embedding = OpenAIEmbeddings(api_key="sk-7Hq3C38BF58T9H-G5wlVfMiwtEeUm5SvV1Or1E_4p-T3BlbkFJaCj87DoTlk-XssrTubJmKieCmrwVm1efbvT2t36DwA",
+                 embedding = OpenAIEmbeddings(api_key="",
                                               model="text-embedding-3-large")
                  ) -> None:
         self.vector_db = vector_db

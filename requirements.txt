@@ -1,0 +1,16 @@
+langchain == 0.1.14
+langchain_openai
+langchain_core == 0.1.43
+langchain_community == 0.0.31
+pypdf == 4.2.0
+langserve[all]~=0.2.3
+chromadb == 0.4.24
+langchain_chroma == 0.1.0
+faiss-cpu == 1.8.0
+rapidocr-onnxruntime
+unstructured
+fastapi~=0.115.4
+uvicorn == 0.29.0
+pydantic~=2.9.2
+tqdm~=4.66.6
+python-dotenv~=1.0.1

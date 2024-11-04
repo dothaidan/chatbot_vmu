@@ -2,17 +2,20 @@ import re
 from langchain import hub
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate, ChatPromptTemplate, MessagesPlaceholder
 
 template = """Bạn là một người quản lý công tác sinh viên của trường đại học, 
 hãy sử dụng kiến thức đã có sẵn để  trả lời câu hỏi của sinh viên.
-Nếu bạn không biết hãy nói không biết.
-Hãy viết đầy đủ nội dung
+Nếu bạn không biết hãy tìm địa chỉ văn phòng công tác sinh viên và chỉ dẫn sinh viên đến đó.
+Hãy viết đầy đủ nội dung.
 Context: {context}
-Question: {question}
-Answer:"""
+"""
 
-custom_prompt = PromptTemplate.from_template(template)
+custom_prompt = ChatPromptTemplate.from_messages([
+    ("system", template),
+    ("system", "Context: {context}"),
+    ("human", "Question: {question}")
+])
 
 
 class Str_OutputParser(StrOutputParser):
